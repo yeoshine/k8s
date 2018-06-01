@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: doclever
+  selector:
+    role: doclever
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: doclever
+    spec:
+      containers:
+      - name: doclever
+        image: ydjjing/mock:latest
+        ports:
+        - containerPort: 10000 
+        volumeMounts:
+        - name: doclever-persistent-storage
+          mountPath: /root/DOClever/data
+        env:
+        - name: DB_HOST
+          value: mongodb://mongo:27017/DOClever
+        - name: PORT
+          value: "10000"
+        - name: DB_FILE
+          value: /root/DOClever/data/file
+        - name: DB_IMG
+          value: /root/DOClever/data/img
+        - name: DB_TEMP
+          value: /root/DOClever/data/tmp
+      volumes:
+      - name: doclever-persistent-storage
+        persistentVolumeClaim:
+          claimName: mock-doclever
+

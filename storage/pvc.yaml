@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mock-mongo 
+spec:
+  storageClassName: alicloud-nas
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  resources:
+    requests:
+      storage: 2Gi

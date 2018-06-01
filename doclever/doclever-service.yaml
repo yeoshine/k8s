@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: doclever 
+  labels:
+    name: doclever
+spec:
+  selector:
+    role: doclever
+  type: NodePort
+  ports:
+  - port: 10000 
+    targetPort: 10000
