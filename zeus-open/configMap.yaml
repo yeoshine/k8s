@@ -1,0 +1,102 @@
+apiVersion: v1
+data:
+  .env: |-
+    APP_NAME=OPEN
+    APP_ENV=local
+    APP_KEY=base64:kDAPwym7Wuexv/pldNm8loR2NYQtcrxP0AxRqYsqKuw=
+    APP_DEBUG=true
+    APP_URL=http://localhost
+
+    LOG_CHANNEL=daily
+    TIMEZONE=Asia/Shanghai
+    LOCK_DRIVER=redis
+
+    OAUTH_USE=test
+    AUTH_SSO_USE=test
+    MINT_USE=mock
+    RECYCLE_USE=mock
+
+    ##30days##
+    JWT_LEEWAY=2592000
+    JWT_KEY=/keys/jwt.key
+
+    ##XQD-keys###
+    XQD_PUBLIC_KEY=/keys/xqd-public.key
+    XQD_PRIVATE_KEY=/keys/xqd-private.key
+
+    DB_CONNECTION=mysql
+    DB_HOST=192.168.1.99
+    DB_PORT=3306
+    DB_DATABASE=opendb
+    DB_USERNAME=opendb
+    DB_PASSWORD=opendb123
+    DB_PREFIX=open_
+
+    BROADCAST_DRIVER=redis
+    CACHE_DRIVER=redis
+    SESSION_DRIVER=redis
+    SESSION_LIFETIME=120
+    QUEUE_DRIVER=sync
+
+    REDIS_HOST=192.168.1.99
+    REDIS_PASSWORD=null
+    REDIS_PORT=6379
+
+    REDIS_SENTINEL_HOST01=10.20.69.197
+    REDIS_SENTINEL_HOST02=10.20.69.197
+    REDIS_SENTINEL_HOST03=10.20.69.197
+    REDIS_SENTINEL_PORT01=26379
+    REDIS_SENTINEL_PORT02=26479
+    REDIS_SENTINEL_PORT03=26579
+    REDIS_SENTINEL_PASSWORD=null
+    REDIS_SENTINEL_DATABASE=0
+    REDIS_SENTINEL_SERVICE=mymaster
+
+    MAIL_DRIVER=smtp
+    MAIL_HOST=smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=null
+    MAIL_PASSWORD=null
+    MAIL_ENCRYPTION=null
+
+    PUSHER_APP_ID=
+    PUSHER_APP_KEY=
+    PUSHER_APP_SECRET=
+    PUSHER_APP_CLUSTER=mt1
+
+    MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+    MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+
+    HOME_DOMAIN=www.dsd.com
+    API_DOMAIN=zeus-open
+  jwt.key: |-
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlbTWztplw0BZeoqkTLCzPiIJT3QVqoKuMg1A+V7UWKDgQT/VsiqtSZrltwFj/1fG1dGC41nNh8bafC8iG/n2IDBRFAQoYEucXbyXzDxfAO0eNCYXSwTw1olKLFLedC4XsIN8adTAUM1eWCNbg3yuHOUBpN1wba+BSFrpTKmVjcXy2e187dnGXkrOd6O9kY3JP+Y/1yzCAHEZBDOXlepRkYmWjWpBI91oAUsK/3xZoDGLiZ0ZdJ7eNaNQlsJmty9dkwa31H9/1bo1NymXTn2SWo5yRG/NgDb1qOV/zFzR3zU57T0RhBVoTtY5gW6nG8O3SNPQR3YP+VNpZgGVzUtSowIDAQAB
+    -----END PUBLIC KEY-----
+  xqd-public.key: |-
+    -----BEGIN PUBLIC KEY-----
+    MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9QLc98Pty8Y4gNOhV+yQmCK5u
+    hTxjDVtueNXEgS/QnvcIzJRbN34IK/PAprMUo+BcMr/4LcOkN3ijfuY9siLUO56v
+    fI5o1GrzBPMfHc6TdA8GJc5XBO2FaTcWqkn3g/3Rakjt0wuHEKjKWYk/lkQNaUe6
+    4oizoN1mGTTsw26gOwIDAQAB
+    -----END PUBLIC KEY-----
+  xqd-private.key: |-
+    -----BEGIN RSA PRIVATE KEY-----
+    MIICWwIBAAKBgQCqonQ18+be1ldKwb22I7OCb7j1amtmeD1OD3/76ze8Apx1tITe
+    rGcCBbu4fS2OcU5WinrJ3W8crO41A5wADk0ay4vaS9Zsctn39ne++WZjBfS3WRR5
+    bkG6eqKIrD9Cqz3/VHXhB9tjrLECNi0mjfyDmpeeoOCJafkmc7riazFeLQIDAQAB
+    AoGAM6SlXWrrNghTNRn8C/M0MkcUCJrj1IiRrV19k8Y2AR4dMnanPCmbp34KuaSR
+    NCpQ1lplHVF6fohMNBlajp3FcdbZiAyEv1CLKEEDgKfhmW91NWvk5r7tUYTfuACB
+    j+BN/XuZosPRyZjZjo1h9XrUXSTR1syKFVwDftXpmlhVxjUCQQDfoSn7YsB9haqL
+    kcN6GBdXzbk3PXhSfilfMz3qDlgFxNXOpQG+kAYROMz9sbO02Vk81brhOb3lCVRx
+    2mwZVUJ/AkEAw1WBCYU9VUhrDHOv2PNxXdBnmkQbgSFuDPn1+RaElWta4eOiLmCU
+    GmcdUZDZbn4/MebBZk0vxorUP29fTu2xUwJADmLXyIw5xdlrdz8RTDFwjv11BNC3
+    hNcI4k7xlLUHhJd9CaYjzpaFTWZSCZ/8541z6C33r7V/OdS30fszKQ4LEQJAI1ZE
+    kcRY5CTFuOr01Pq1d5NMKsxHbYTus8pEhVtdgOp69oKHxHwUTvJ4i1j4/NQ5+n0U
+    X7129yQGYbN0OoMloQJAfev9mN9i94adVvBsak4To5VLgOf6VCY7eOff/+MnWMbf
+    orPooMilrq0OXeQINDqfyzBsXRVArzdWSt7FlwXhYg==
+    -----END RSA PRIVATE KEY-----
+kind: ConfigMap
+metadata:
+  name: zeus-open
+  namespace: dsd

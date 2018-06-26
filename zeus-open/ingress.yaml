@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: zeus-open
+  namespace: dsd
+spec:
+  rules:
+  - host: zeus-open.dsd.d.peiqi.com
+    http:
+      paths:
+      - backend:
+          serviceName: zeus-open
+          servicePort: 80
+        path: /
