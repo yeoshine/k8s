@@ -2,7 +2,7 @@ apiVersion: v1
 data:
   .env: |-
     APP_NAME=OPEN
-    APP_ENV=local
+    APP_ENV=product
     APP_KEY=base64:kDAPwym7Wuexv/pldNm8loR2NYQtcrxP0AxRqYsqKuw=
     APP_DEBUG=true
     APP_URL=http://localhost
@@ -20,11 +20,11 @@ data:
     XQD_PRIVATE_KEY=/keys/xqd-private.key
 
     DB_CONNECTION=mysql
-    DB_HOST=192.168.1.99
+    DB_HOST=rm-2zeq03zqx1b0t05nc115.mysql.rds.aliyuncs.com
     DB_PORT=3306
     DB_DATABASE=opendb
-    DB_USERNAME=opendb
-    DB_PASSWORD=opendb123
+    DB_USERNAME=nepo
+    DB_PASSWORD=nepO@123798
     DB_PREFIX=open_
 
     BROADCAST_DRIVER=redis
@@ -33,19 +33,10 @@ data:
     SESSION_LIFETIME=120
     QUEUE_DRIVER=sync
 
-    REDIS_HOST=192.168.1.99
-    REDIS_PASSWORD=null
+    REDIS_HOST=r-2ze9e8e210e311d4491.redis.rds.aliyuncs.com
+    REDIS_PASSWORD=GNtQVURDb9WEW1LE
     REDIS_PORT=6379
 
-    REDIS_SENTINEL_HOST01=10.20.69.197
-    REDIS_SENTINEL_HOST02=10.20.69.197
-    REDIS_SENTINEL_HOST03=10.20.69.197
-    REDIS_SENTINEL_PORT01=26379
-    REDIS_SENTINEL_PORT02=26479
-    REDIS_SENTINEL_PORT03=26579
-    REDIS_SENTINEL_PASSWORD=null
-    REDIS_SENTINEL_DATABASE=0
-    REDIS_SENTINEL_SERVICE=mymaster
 
     MAIL_DRIVER=smtp
     MAIL_HOST=smtp.mailtrap.io
@@ -61,19 +52,9 @@ data:
 
     MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
     MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
-
-    HOME_DOMAIN=www.dsd.com
-    API_DOMAIN=zeus-open
   jwt.key: |-
     -----BEGIN PUBLIC KEY-----
     MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlbTWztplw0BZeoqkTLCzPiIJT3QVqoKuMg1A+V7UWKDgQT/VsiqtSZrltwFj/1fG1dGC41nNh8bafC8iG/n2IDBRFAQoYEucXbyXzDxfAO0eNCYXSwTw1olKLFLedC4XsIN8adTAUM1eWCNbg3yuHOUBpN1wba+BSFrpTKmVjcXy2e187dnGXkrOd6O9kY3JP+Y/1yzCAHEZBDOXlepRkYmWjWpBI91oAUsK/3xZoDGLiZ0ZdJ7eNaNQlsJmty9dkwa31H9/1bo1NymXTn2SWo5yRG/NgDb1qOV/zFzR3zU57T0RhBVoTtY5gW6nG8O3SNPQR3YP+VNpZgGVzUtSowIDAQAB
-    -----END PUBLIC KEY-----
-  xqd-public.key: |-
-    -----BEGIN PUBLIC KEY-----
-    MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9QLc98Pty8Y4gNOhV+yQmCK5u
-    hTxjDVtueNXEgS/QnvcIzJRbN34IK/PAprMUo+BcMr/4LcOkN3ijfuY9siLUO56v
-    fI5o1GrzBPMfHc6TdA8GJc5XBO2FaTcWqkn3g/3Rakjt0wuHEKjKWYk/lkQNaUe6
-    4oizoN1mGTTsw26gOwIDAQAB
     -----END PUBLIC KEY-----
   xqd-private.key: |-
     -----BEGIN RSA PRIVATE KEY-----
@@ -91,6 +72,13 @@ data:
     X7129yQGYbN0OoMloQJAfev9mN9i94adVvBsak4To5VLgOf6VCY7eOff/+MnWMbf
     orPooMilrq0OXeQINDqfyzBsXRVArzdWSt7FlwXhYg==
     -----END RSA PRIVATE KEY-----
+  xqd-public.key: |-
+    -----BEGIN PUBLIC KEY-----
+    MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9QLc98Pty8Y4gNOhV+yQmCK5u
+    hTxjDVtueNXEgS/QnvcIzJRbN34IK/PAprMUo+BcMr/4LcOkN3ijfuY9siLUO56v
+    fI5o1GrzBPMfHc6TdA8GJc5XBO2FaTcWqkn3g/3Rakjt0wuHEKjKWYk/lkQNaUe6
+    4oizoN1mGTTsw26gOwIDAQAB
+    -----END PUBLIC KEY-----
 kind: ConfigMap
 metadata:
   name: zeus-open

@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: zeus-open
+  namespace: dsd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: zeus-open
+  template:
+    metadata:
+      labels:
+        run: zeus-open
+    spec:
+      containers:
+      - image: registry.cn-beijing.aliyuncs.com/peiqi/zeus-open:20180704
+        imagePullPolicy: Always
+        name: zeus-open
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+          - mountPath: /apps/webroot/env/
+            name: env-config
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: cr-image-pulling-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - configMap:
+            defaultMode: 420
+            items:
+              - key: .env
+                path: .env
+              - key: jwt.key
+                path: jwt.key
+              - key: xqd-public.key
+                path: xqd-public.key
+              - key: xqd-private.key
+                path: xqd-private.key
+            name: zeus-open
+          name: env-config
